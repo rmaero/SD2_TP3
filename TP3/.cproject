@@ -118,30 +118,30 @@
 								<option id="com.crt.advproject.gcc.specs.480671284" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.config.180944989" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.store.1336230711" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
-								<option id="gnu.c.compiler.option.debugging.sanitaddress.581054995" superClass="gnu.c.compiler.option.debugging.sanitaddress"/>
-								<option id="gnu.c.compiler.option.debugging.sanitpointers.1226954132" superClass="gnu.c.compiler.option.debugging.sanitpointers"/>
-								<option id="gnu.c.compiler.option.debugging.sanitthread.1764894847" superClass="gnu.c.compiler.option.debugging.sanitthread"/>
-								<option id="gnu.c.compiler.option.debugging.sanitleak.1406177870" superClass="gnu.c.compiler.option.debugging.sanitleak"/>
-								<option id="gnu.c.compiler.option.debugging.sanitundef.1737385279" superClass="gnu.c.compiler.option.debugging.sanitundef"/>
-								<option id="gnu.c.compiler.option.warnings.wcastalign.1808318713" superClass="gnu.c.compiler.option.warnings.wcastalign"/>
-								<option id="gnu.c.compiler.option.warnings.wcastqual.170809836" superClass="gnu.c.compiler.option.warnings.wcastqual"/>
-								<option id="gnu.c.compiler.option.warnings.wdisabledopt.1851060364" superClass="gnu.c.compiler.option.warnings.wdisabledopt"/>
-								<option id="gnu.c.compiler.option.warnings.wlogicalop.1526865016" superClass="gnu.c.compiler.option.warnings.wlogicalop"/>
-								<option id="gnu.c.compiler.option.warnings.wmissingdecl.1611670772" superClass="gnu.c.compiler.option.warnings.wmissingdecl"/>
-								<option id="gnu.c.compiler.option.warnings.wmissingincdir.1703251850" superClass="gnu.c.compiler.option.warnings.wmissingincdir"/>
-								<option id="gnu.c.compiler.option.warnings.wredundantdecl.1345814869" superClass="gnu.c.compiler.option.warnings.wredundantdecl"/>
-								<option id="gnu.c.compiler.option.warnings.wshadow.327419255" superClass="gnu.c.compiler.option.warnings.wshadow"/>
-								<option id="gnu.c.compiler.option.warnings.wsignconv.903206236" superClass="gnu.c.compiler.option.warnings.wsignconv"/>
-								<option id="gnu.c.compiler.option.warnings.wswitchdef.394176769" superClass="gnu.c.compiler.option.warnings.wswitchdef"/>
-								<option id="gnu.c.compiler.option.warnings.wundef.634849091" superClass="gnu.c.compiler.option.warnings.wundef"/>
-								<option id="gnu.c.compiler.option.warnings.wwritestrings.60858429" superClass="gnu.c.compiler.option.warnings.wwritestrings"/>
-								<option id="gnu.c.compiler.option.warnings.wfloatequal.1825692384" superClass="gnu.c.compiler.option.warnings.wfloatequal"/>
-								<option id="gnu.c.compiler.option.misc.hardening.501020270" superClass="gnu.c.compiler.option.misc.hardening"/>
-								<option id="gnu.c.compiler.option.misc.randomization.875283441" superClass="gnu.c.compiler.option.misc.randomization"/>
-								<option id="com.crt.advproject.gcc.merge.constants.185734080" superClass="com.crt.advproject.gcc.merge.constants"/>
-								<option id="com.crt.advproject.gcc.prefixmap.1974709628" superClass="com.crt.advproject.gcc.prefixmap"/>
-								<option id="com.crt.advproject.gcc.securestate.125393085" superClass="com.crt.advproject.gcc.securestate"/>
-								<option id="com.crt.advproject.gcc.stackusage.641783337" superClass="com.crt.advproject.gcc.stackusage"/>
+								<option id="gnu.c.compiler.option.debugging.sanitaddress.581054995" superClass="gnu.c.compiler.option.debugging.sanitaddress" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitpointers.1226954132" superClass="gnu.c.compiler.option.debugging.sanitpointers" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitthread.1764894847" superClass="gnu.c.compiler.option.debugging.sanitthread" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitleak.1406177870" superClass="gnu.c.compiler.option.debugging.sanitleak" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitundef.1737385279" superClass="gnu.c.compiler.option.debugging.sanitundef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wcastalign.1808318713" superClass="gnu.c.compiler.option.warnings.wcastalign" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wcastqual.170809836" superClass="gnu.c.compiler.option.warnings.wcastqual" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wdisabledopt.1851060364" superClass="gnu.c.compiler.option.warnings.wdisabledopt" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wlogicalop.1526865016" superClass="gnu.c.compiler.option.warnings.wlogicalop" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wmissingdecl.1611670772" superClass="gnu.c.compiler.option.warnings.wmissingdecl" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wmissingincdir.1703251850" superClass="gnu.c.compiler.option.warnings.wmissingincdir" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wredundantdecl.1345814869" superClass="gnu.c.compiler.option.warnings.wredundantdecl" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wshadow.327419255" superClass="gnu.c.compiler.option.warnings.wshadow" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wsignconv.903206236" superClass="gnu.c.compiler.option.warnings.wsignconv" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wswitchdef.394176769" superClass="gnu.c.compiler.option.warnings.wswitchdef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wundef.634849091" superClass="gnu.c.compiler.option.warnings.wundef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wwritestrings.60858429" superClass="gnu.c.compiler.option.warnings.wwritestrings" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wfloatequal.1825692384" superClass="gnu.c.compiler.option.warnings.wfloatequal" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.hardening.501020270" superClass="gnu.c.compiler.option.misc.hardening" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.randomization.875283441" superClass="gnu.c.compiler.option.misc.randomization" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.merge.constants.185734080" superClass="com.crt.advproject.gcc.merge.constants" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.prefixmap.1974709628" superClass="com.crt.advproject.gcc.prefixmap" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.securestate.125393085" superClass="com.crt.advproject.gcc.securestate" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.stackusage.641783337" superClass="com.crt.advproject.gcc.stackusage" useByScannerDiscovery="false"/>
 								<inputType id="com.crt.advproject.compiler.input.619333176" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.debug.453331850" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.debug">
@@ -411,31 +411,31 @@
 								<option id="com.crt.advproject.gcc.specs.1892120853" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.config.549973944" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.store.469131240" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
-								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.838301440" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level"/>
-								<option id="gnu.c.compiler.option.debugging.sanitaddress.58425160" superClass="gnu.c.compiler.option.debugging.sanitaddress"/>
-								<option id="gnu.c.compiler.option.debugging.sanitpointers.408129851" superClass="gnu.c.compiler.option.debugging.sanitpointers"/>
-								<option id="gnu.c.compiler.option.debugging.sanitthread.1258078698" superClass="gnu.c.compiler.option.debugging.sanitthread"/>
-								<option id="gnu.c.compiler.option.debugging.sanitleak.1305926168" superClass="gnu.c.compiler.option.debugging.sanitleak"/>
-								<option id="gnu.c.compiler.option.debugging.sanitundef.1279234530" superClass="gnu.c.compiler.option.debugging.sanitundef"/>
-								<option id="gnu.c.compiler.option.warnings.wcastalign.1791777140" superClass="gnu.c.compiler.option.warnings.wcastalign"/>
-								<option id="gnu.c.compiler.option.warnings.wcastqual.831019640" superClass="gnu.c.compiler.option.warnings.wcastqual"/>
-								<option id="gnu.c.compiler.option.warnings.wdisabledopt.1182965136" superClass="gnu.c.compiler.option.warnings.wdisabledopt"/>
-								<option id="gnu.c.compiler.option.warnings.wlogicalop.919014650" superClass="gnu.c.compiler.option.warnings.wlogicalop"/>
-								<option id="gnu.c.compiler.option.warnings.wmissingdecl.986875007" superClass="gnu.c.compiler.option.warnings.wmissingdecl"/>
-								<option id="gnu.c.compiler.option.warnings.wmissingincdir.694667669" superClass="gnu.c.compiler.option.warnings.wmissingincdir"/>
-								<option id="gnu.c.compiler.option.warnings.wredundantdecl.1758370238" superClass="gnu.c.compiler.option.warnings.wredundantdecl"/>
-								<option id="gnu.c.compiler.option.warnings.wshadow.483426198" superClass="gnu.c.compiler.option.warnings.wshadow"/>
-								<option id="gnu.c.compiler.option.warnings.wsignconv.573970856" superClass="gnu.c.compiler.option.warnings.wsignconv"/>
-								<option id="gnu.c.compiler.option.warnings.wswitchdef.435739742" superClass="gnu.c.compiler.option.warnings.wswitchdef"/>
-								<option id="gnu.c.compiler.option.warnings.wundef.466271335" superClass="gnu.c.compiler.option.warnings.wundef"/>
-								<option id="gnu.c.compiler.option.warnings.wwritestrings.1674639709" superClass="gnu.c.compiler.option.warnings.wwritestrings"/>
-								<option id="gnu.c.compiler.option.warnings.wfloatequal.865570843" superClass="gnu.c.compiler.option.warnings.wfloatequal"/>
-								<option id="gnu.c.compiler.option.misc.hardening.933035400" superClass="gnu.c.compiler.option.misc.hardening"/>
-								<option id="gnu.c.compiler.option.misc.randomization.30802879" superClass="gnu.c.compiler.option.misc.randomization"/>
-								<option id="com.crt.advproject.gcc.merge.constants.242307262" superClass="com.crt.advproject.gcc.merge.constants"/>
-								<option id="com.crt.advproject.gcc.prefixmap.1683732609" superClass="com.crt.advproject.gcc.prefixmap"/>
-								<option id="com.crt.advproject.gcc.securestate.190527799" superClass="com.crt.advproject.gcc.securestate"/>
-								<option id="com.crt.advproject.gcc.stackusage.369711066" superClass="com.crt.advproject.gcc.stackusage"/>
+								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.838301440" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level" useByScannerDiscovery="true"/>
+								<option id="gnu.c.compiler.option.debugging.sanitaddress.58425160" superClass="gnu.c.compiler.option.debugging.sanitaddress" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitpointers.408129851" superClass="gnu.c.compiler.option.debugging.sanitpointers" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitthread.1258078698" superClass="gnu.c.compiler.option.debugging.sanitthread" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitleak.1305926168" superClass="gnu.c.compiler.option.debugging.sanitleak" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.sanitundef.1279234530" superClass="gnu.c.compiler.option.debugging.sanitundef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wcastalign.1791777140" superClass="gnu.c.compiler.option.warnings.wcastalign" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wcastqual.831019640" superClass="gnu.c.compiler.option.warnings.wcastqual" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wdisabledopt.1182965136" superClass="gnu.c.compiler.option.warnings.wdisabledopt" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wlogicalop.919014650" superClass="gnu.c.compiler.option.warnings.wlogicalop" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wmissingdecl.986875007" superClass="gnu.c.compiler.option.warnings.wmissingdecl" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wmissingincdir.694667669" superClass="gnu.c.compiler.option.warnings.wmissingincdir" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wredundantdecl.1758370238" superClass="gnu.c.compiler.option.warnings.wredundantdecl" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wshadow.483426198" superClass="gnu.c.compiler.option.warnings.wshadow" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wsignconv.573970856" superClass="gnu.c.compiler.option.warnings.wsignconv" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wswitchdef.435739742" superClass="gnu.c.compiler.option.warnings.wswitchdef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wundef.466271335" superClass="gnu.c.compiler.option.warnings.wundef" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wwritestrings.1674639709" superClass="gnu.c.compiler.option.warnings.wwritestrings" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wfloatequal.865570843" superClass="gnu.c.compiler.option.warnings.wfloatequal" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.hardening.933035400" superClass="gnu.c.compiler.option.misc.hardening" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.randomization.30802879" superClass="gnu.c.compiler.option.misc.randomization" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.merge.constants.242307262" superClass="com.crt.advproject.gcc.merge.constants" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.prefixmap.1683732609" superClass="com.crt.advproject.gcc.prefixmap" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.securestate.190527799" superClass="com.crt.advproject.gcc.securestate" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.stackusage.369711066" superClass="com.crt.advproject.gcc.stackusage" useByScannerDiscovery="false"/>
 								<inputType id="com.crt.advproject.compiler.input.1584258370" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.release.1545702858" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">
