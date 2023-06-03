@@ -37,7 +37,6 @@ void mefRecTrama_task(void)
 			break;
 
 		case MEF_REC_RECIBIENDO:
-
 			if (flagRec != 0 && byteRec != CHAR_LF)
 			{
 				if (indexRec < BUFFER_SIZE)
@@ -51,31 +50,13 @@ void mefRecTrama_task(void)
 			if (flagRec != 0 && byteRec == CHAR_LF)
 			{
 				procTrama(bufferRec, indexRec);
+				estado = MEF_REC_ESPERANDO_INICIO;
 			}
 
 			if (indexRec > BUFFER_SIZE )
 			{
 				estado = MEF_REC_ESPERANDO_INICIO;
 			}
-
 			break;
-/*
-		case MEF_REC_ESPERANDO_0A:
-
-			if (flagRec != 0 && byteRec == ':')
-			{
-				indexRec = 0;
-				estado = MEF_REC_RECIBIENDO;
-			}
-
-			if (flagRec != 0 && byteRec != ':')
-			{
-				if (byteRec == CHAR_LF)
-					procTrama(bufferRec, indexRec);
-
-				estado = MEF_REC_ESPERANDO_INICIO;
-			}
-			break;
-			*/
 	}
 }

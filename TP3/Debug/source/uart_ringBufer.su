@@ -5,7 +5,7 @@
 ../drivers/fsl_lpsci.h:524:20:LPSCI_WriteByte	16	static
 ../drivers/fsl_lpsci.h:538:23:LPSCI_ReadByte	16	static
 ../drivers/fsl_port.h:371:20:PORT_SetPinMux	24	static
-../source/uart_ringBufer.c:64:6:uart_ringBuffer_init	24	static
-../source/uart_ringBufer.c:106:9:uart_ringBuffer_recDatos	32	static
-../source/uart_ringBufer.c:136:9:uart_ringBuffer_envDatos	24	static
-../source/uart_ringBufer.c:160:6:UART0_IRQHandler	16	static
+../source/uart_ringBufer.c:19:6:uart_ringBuffer_init	24	static
+../source/uart_ringBufer.c:61:9:uart_ringBuffer_recDatos	32	static
+../source/uart_ringBufer.c:91:9:uart_ringBuffer_envDatos	24	static
+../source/uart_ringBufer.c:115:6:UART0_IRQHandler	16	static

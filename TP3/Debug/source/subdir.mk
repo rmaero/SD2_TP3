@@ -4,9 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../source/SD2_I2C.c \
 ../source/SD2_board.c \
-../source/ejemploTramas.c \
+../source/enviarAccContinuo.c \
+../source/main.c \
 ../source/mefRecTrama.c \
+../source/mma8451.c \
 ../source/mtb.c \
 ../source/procTrama.c \
 ../source/ringBuffer.c \
@@ -14,9 +17,12 @@ C_SRCS += \
 ../source/uart_ringBufer.c 
 
 C_DEPS += \
+./source/SD2_I2C.d \
 ./source/SD2_board.d \
-./source/ejemploTramas.d \
+./source/enviarAccContinuo.d \
+./source/main.d \
 ./source/mefRecTrama.d \
+./source/mma8451.d \
 ./source/mtb.d \
 ./source/procTrama.d \
 ./source/ringBuffer.d \
@@ -24,9 +30,12 @@ C_DEPS += \
 ./source/uart_ringBufer.d 
 
 OBJS += \
+./source/SD2_I2C.o \
 ./source/SD2_board.o \
-./source/ejemploTramas.o \
+./source/enviarAccContinuo.o \
+./source/main.o \
 ./source/mefRecTrama.o \
+./source/mma8451.o \
 ./source/mtb.o \
 ./source/procTrama.o \
 ./source/ringBuffer.o \
@@ -46,7 +55,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/SD2_board.d ./source/SD2_board.o ./source/ejemploTramas.d ./source/ejemploTramas.o ./source/mefRecTrama.d ./source/mefRecTrama.o ./source/mtb.d ./source/mtb.o ./source/procTrama.d ./source/procTrama.o ./source/ringBuffer.d ./source/ringBuffer.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/uart_ringBufer.d ./source/uart_ringBufer.o
+	-$(RM) ./source/SD2_I2C.d ./source/SD2_I2C.o ./source/SD2_board.d ./source/SD2_board.o ./source/enviarAccContinuo.d ./source/enviarAccContinuo.o ./source/main.d ./source/main.o ./source/mefRecTrama.d ./source/mefRecTrama.o ./source/mma8451.d ./source/mma8451.o ./source/mtb.d ./source/mtb.o ./source/procTrama.d ./source/procTrama.o ./source/ringBuffer.d ./source/ringBuffer.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/uart_ringBufer.d ./source/uart_ringBufer.o
 
 .PHONY: clean-source
 

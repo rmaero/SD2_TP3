@@ -5,6 +5,6 @@
 ../drivers/fsl_gpio.h:231:20:GPIO_PortToggle	16	static
 ../drivers/fsl_gpio.h:258:24:GPIO_PinRead	16	static
 ../drivers/fsl_gpio.h:267:24:GPIO_ReadPinInput	16	static
-../source/SD2_board.c:66:6:board_init	32	static
-../source/SD2_board.c:125:6:board_setLed	16	static
-../source/SD2_board.c:146:6:board_getSw	16	static
+../source/SD2_board.c:21:6:board_init	32	static
+../source/SD2_board.c:86:6:board_setLed	16	static
+../source/SD2_board.c:107:6:board_getSw	16	static

@@ -1,4 +1,5 @@
 #include "stdlib.h"
+
 #include "procTrama.h"
 #include "uart_ringBuffer.h"
 #include "SD2_board.h"
@@ -11,8 +12,6 @@
 #define BYTE3 3
 #define BYTE4 4
 #define BYTE5 5
-
-
 
 
 static void accionLed(uint8_t charIdLed, board_ledMsg_enum ledMsg)
@@ -46,12 +45,10 @@ static void procLed(char *buf)
 			sprintf(&tramaRespuesta,":%02d0%cT\n",NUMERO_GRUPO,buf[BYTE3]);
 			break;
 		default:
-			//TODO DEVOLVER ERROR
 			sprintf(&tramaRespuesta,"ERROR\n");
 			break;
 	}
 	//Responder igual a la peticion
-
 	uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
@@ -78,19 +75,27 @@ static void procSw(char *buf)
 				sprintf(&tramaRespuesta,":%02d13N\n",NUMERO_GRUPO);
 			break;
 		default:
-			//TODO DEVOLVER ERROR
 			sprintf(&tramaRespuesta,"ERROR\n");
 			break;
 	}
 	uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
-static void procAcc(char *buf)
+static void procAcc()
 {
 	char tramaRespuestaAcc[18];
+	int16_t accX =mma8451_getAcX();
+	int16_t accY =mma8451_getAcY();
+	int16_t accZ =mma8451_getAcZ();
+	char signX='+',signY='+',signZ='+';
+	if(accX<0)
+		signX='-';
+	if(accY<0)
+		signY='-';
+	if(accZ<0)
+		signZ='-';
 	//responder
-	//TODO corregir signo
-	sprintf(&tramaRespuestaAcc,":%02d21+%03d+%03d+%03d\n",NUMERO_GRUPO);
+	sprintf(&tramaRespuestaAcc,":%02d21%c%03d%c%03d%c%03d\n",NUMERO_GRUPO, signX,abs(accX), signY,abs(accY), signZ,abs(accZ) );
 	uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
 }
 
@@ -101,7 +106,6 @@ void procTrama(char *buf, int length)
 	char grupoStr[2];
 	grupoStr[BYTE0]=buf[BYTE0];
 	grupoStr[BYTE1]=buf[BYTE1];
-
 
 	//obligadamente le tengo que dar un puntero en el segundo argumento,
 	int grupo;
@@ -121,8 +125,7 @@ void procTrama(char *buf, int length)
 			break;
 
 		case '2'://2= leer acelerometro
-			procAcc(buf);
+			procAcc();
 			break;
-
     }
 }

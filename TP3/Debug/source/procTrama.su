@@ -1,5 +1,5 @@
-../source/procTrama.c:18:13:accionLed	16	static
-../source/procTrama.c:31:13:procLed	24	static
-../source/procTrama.c:58:13:procSw	32	static
-../source/procTrama.c:88:13:procAcc	48	static
-../source/procTrama.c:97:6:procTrama	32	static
+../source/procTrama.c:17:13:accionLed	16	static
+../source/procTrama.c:30:13:procLed	24	static
+../source/procTrama.c:55:13:procSw	32	static
+../source/procTrama.c:84:13:procAcc	88	static
+../source/procTrama.c:102:6:procTrama	32	static
