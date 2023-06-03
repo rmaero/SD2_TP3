@@ -14,6 +14,7 @@
     <booleanAttribute key="com.nxp.mcuxpresso.pemicro.flash.reset.target" value="true"/>
     <listAttribute key="com.pemicro.debug.gdbjtag.pne.ELVES"/>
     <intAttribute key="com.pemicro.debug.gdbjtag.pne.NUMBER_ELVES" value="0"/>
+    <booleanAttribute key="com.pemicro.debug.gdbjtag.pne.PE.CORERESET" value="true"/>
     <stringAttribute key="com.pemicro.debug.gdbjtag.pne.PE.DEVICE_NAME" value="NXP_KL4x_KL46Z256M4"/>
     <stringAttribute key="com.pemicro.debug.gdbjtag.pne.PE.GDB_OPTIONS" value=""/>
     <intAttribute key="com.pemicro.debug.gdbjtag.pne.PE.HARDWARE_INTERFACE" value="6"/>
@@ -196,7 +197,7 @@
     <booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
     <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
-    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug\SD2_TP3.axf"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/SD2_TP3.axf"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="SD2_TP3"/>
     <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="com.crt.advproject.config.exe.debug.353848920"/>
