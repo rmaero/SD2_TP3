@@ -14,6 +14,7 @@ C_SRCS += \
 ../drivers/fsl_i2c.c \
 ../drivers/fsl_lpsci.c \
 ../drivers/fsl_smc.c \
+../drivers/fsl_spi.c \
 ../drivers/fsl_uart.c 
 
 C_DEPS += \
@@ -27,6 +28,7 @@ C_DEPS += \
 ./drivers/fsl_i2c.d \
 ./drivers/fsl_lpsci.d \
 ./drivers/fsl_smc.d \
+./drivers/fsl_spi.d \
 ./drivers/fsl_uart.d 
 
 OBJS += \
@@ -40,6 +42,7 @@ OBJS += \
 ./drivers/fsl_i2c.o \
 ./drivers/fsl_lpsci.o \
 ./drivers/fsl_smc.o \
+./drivers/fsl_spi.o \
 ./drivers/fsl_uart.o 
 
 
@@ -55,7 +58,7 @@ drivers/%.o: ../drivers/%.c drivers/subdir.mk
 clean: clean-drivers
 
 clean-drivers:
-	-$(RM) ./drivers/fsl_clock.d ./drivers/fsl_clock.o ./drivers/fsl_common.d ./drivers/fsl_common.o ./drivers/fsl_ftfx_cache.d ./drivers/fsl_ftfx_cache.o ./drivers/fsl_ftfx_controller.d ./drivers/fsl_ftfx_controller.o ./drivers/fsl_ftfx_flash.d ./drivers/fsl_ftfx_flash.o ./drivers/fsl_ftfx_flexnvm.d ./drivers/fsl_ftfx_flexnvm.o ./drivers/fsl_gpio.d ./drivers/fsl_gpio.o ./drivers/fsl_i2c.d ./drivers/fsl_i2c.o ./drivers/fsl_lpsci.d ./drivers/fsl_lpsci.o ./drivers/fsl_smc.d ./drivers/fsl_smc.o ./drivers/fsl_uart.d ./drivers/fsl_uart.o
+	-$(RM) ./drivers/fsl_clock.d ./drivers/fsl_clock.o ./drivers/fsl_common.d ./drivers/fsl_common.o ./drivers/fsl_ftfx_cache.d ./drivers/fsl_ftfx_cache.o ./drivers/fsl_ftfx_controller.d ./drivers/fsl_ftfx_controller.o ./drivers/fsl_ftfx_flash.d ./drivers/fsl_ftfx_flash.o ./drivers/fsl_ftfx_flexnvm.d ./drivers/fsl_ftfx_flexnvm.o ./drivers/fsl_gpio.d ./drivers/fsl_gpio.o ./drivers/fsl_i2c.d ./drivers/fsl_i2c.o ./drivers/fsl_lpsci.d ./drivers/fsl_lpsci.o ./drivers/fsl_smc.d ./drivers/fsl_smc.o ./drivers/fsl_spi.d ./drivers/fsl_spi.o ./drivers/fsl_uart.d ./drivers/fsl_uart.o
 
 .PHONY: clean-drivers
 

@@ -7,7 +7,8 @@ source/main.o source/main.d: ../source/main.c ../source/mefRecTrama.h \
  ../CMSIS/MKL46Z4_features.h ../drivers/fsl_clock.h \
  ../drivers/fsl_common.h ../drivers/fsl_gpio.h ../source/mma8451.h \
  ../source/uart_ringBuffer.h ../source/procTrama.h \
- ../source/enviarAccContinuo.h
+ ../source/enviarAccContinuo.h ../source/oled.h ../source/display.h \
+ ../source/mefDisplay.h
 ../source/mefRecTrama.h:
 ../source/SD2_board.h:
 ../CMSIS/MKL46Z4.h:
@@ -29,3 +30,6 @@ source/main.o source/main.d: ../source/main.c ../source/mefRecTrama.h \
 ../source/uart_ringBuffer.h:
 ../source/procTrama.h:
 ../source/enviarAccContinuo.h:
+../source/oled.h:
+../source/display.h:
+../source/mefDisplay.h:

@@ -1,0 +1,6 @@
+../source/display.c:9:6:display_init	8	static
+../source/display.c:19:6:displayMaxG	48	static
+../source/display.c:33:6:display_test	16	static
+../source/display.c:47:6:display_header	16	static
+../source/display.c:54:6:display_reading	48	static
+../source/display.c:76:6:display_state	24	static
