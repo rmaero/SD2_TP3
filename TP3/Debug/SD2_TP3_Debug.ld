@@ -6,7 +6,7 @@
  * Generated linker script file for MKL46Z256xxx4
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.7.0 [Build 9198] [2023-01-17] on 4 jun. 2023 18:45:01
+ * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 6 jun. 2023 17:32:48
  */
 
 INCLUDE "SD2_TP3_Debug_library.ld"
@@ -50,21 +50,6 @@ SECTIONS
        *(.text*)
        *(.rodata .rodata.* .constdata .constdata.*)
        . = ALIGN(4);
-    } > PROGRAM_FLASH
-    /*
-     * for exception handling/unwind - some Newlib functions (in common
-     * with C++ and STDC++) use this.
-     */
-    .ARM.extab : ALIGN(4)
-    {
-        *(.ARM.extab* .gnu.linkonce.armextab.*)
-    } > PROGRAM_FLASH
-
-    .ARM.exidx : ALIGN(4)
-    {
-        __exidx_start = .;
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-        __exidx_end = .;
     } > PROGRAM_FLASH
  
     _etext = .;
@@ -136,9 +121,25 @@ SECTIONS
        PROVIDE(__end_noinit_SRAM = .) ;        
     } > SRAM AT> SRAM
 
+    /*
+     * for exception handling/unwind - some Newlib functions (in common
+     * with C++ and STDC++) use this.
+     */
+    .ARM.extab : ALIGN(4)
+    {
+        *(.ARM.extab* .gnu.linkonce.armextab.*)
+    } > PROGRAM_FLASH
+
+    .ARM.exidx : ALIGN(4)
+    {
+        __exidx_start = .;
+        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+        __exidx_end = .;
+    } > PROGRAM_FLASH
+
     /* Reserve and place Heap within memory map */
     _HeapSize = 0x800;
-    .heap (NOLOAD) :  ALIGN(4)
+    .heap :  ALIGN(4)
     {
         _pvHeapStart = .;
         . += _HeapSize;
@@ -148,12 +149,12 @@ SECTIONS
 
      _StackSize = 0x800;
      /* Reserve space in memory for Stack */
-    .heap2stackfill (NOLOAD) :
+    .heap2stackfill  :
     {
         . += _StackSize;
     } > SRAM
     /* Locate actual Stack in memory map */
-    .stack ORIGIN(SRAM) + LENGTH(SRAM) - _StackSize - 0 (NOLOAD) :  ALIGN(4)
+    .stack ORIGIN(SRAM) + LENGTH(SRAM) - _StackSize - 0:  ALIGN(4)
     {
         _vStackBase = .;
         . = ALIGN(4);

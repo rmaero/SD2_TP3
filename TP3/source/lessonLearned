@@ -1,0 +1,2 @@
+Durante la implementacion de la transmision continua en la UART0 se colgaba eventualmente sin importar que tan rapido o lento eran los pedidos desde la aplicacion Master.
+Nos encontramos con un overrun por parte de la recepcion, que frena la comunicacion hasta que se haya limpiado la bandera. 

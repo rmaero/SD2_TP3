@@ -49,6 +49,9 @@ void uart_ringBuffer_init(void)
 	/* Habilita interrupciones */
 	LPSCI_EnableInterrupts(UART0, kLPSCI_RxDataRegFullInterruptEnable);
 	LPSCI_EnableInterrupts(UART0, kLPSCI_TxDataRegEmptyInterruptEnable);
+
+	LPSCI_EnableInterrupts(UART0,kLPSCI_RxOverrunFlag );
+	LPSCI_EnableInterrupts(UART0,kLPSCI_FramingErrorFlag );
 	EnableIRQ(UART0_IRQn);
 }
 
@@ -115,6 +118,15 @@ int32_t uart_ringBuffer_envDatos(uint8_t *pBuf, int32_t size)
 void UART0_IRQHandler(void)
 {
 	uint8_t data;
+
+	//============ DEBUG SE CUELGA EN COMM CONTINUA =================
+	if ( kLPSCI_RxOverrunFlag & LPSCI_GetStatusFlags(UART0))// &&
+			//(kLPSCI_RxOverrunInterruptEnable) & LPSCI_GetEnabledInterrupts(UART0) )
+	{
+		board_setLed(BOARD_LED_ID_ROJO, BOARD_LED_MSG_ON);//TODO DISABLE THIS, FOR DEBUG PURPOSES ONLY
+		LPSCI_ClearStatusFlags(UART0, kLPSCI_RxOverrunFlag);
+	}
+	//===========DEBUG=========================================
 
     if ( (kLPSCI_RxDataRegFullFlag)            & LPSCI_GetStatusFlags(UART0) &&
          (kLPSCI_RxDataRegFullInterruptEnable) & LPSCI_GetEnabledInterrupts(UART0) )
