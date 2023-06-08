@@ -1,8 +1,10 @@
 #include "stdlib.h"
+#include "stdio.h"
 
 #include "procTrama.h"
 #include "uart_ringBuffer.h"
 #include "SD2_board.h"
+#include "mma8451.h"
 
 #define NUMERO_GRUPO 16
 //bytes de trama recibidos
@@ -49,7 +51,9 @@ static void procLed(char *buf)
 			break;
 	}
 	//Responder igual a la peticion
-	uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	//Tx por ringbuffer
+	//uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	uart0_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
 static void procSw(char *buf)
@@ -78,7 +82,10 @@ static void procSw(char *buf)
 			sprintf(&tramaRespuesta,"ERROR\n");
 			break;
 	}
-	uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	//Tx por ringbuffer
+	//uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	//Tx por DMA
+	uart0_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
 static void procAcc()
@@ -96,7 +103,10 @@ static void procAcc()
 		signZ='-';
 	//responder
 	sprintf(&tramaRespuestaAcc,":%02d21%c%03d%c%03d%c%03d\n",NUMERO_GRUPO, signX,abs(accX), signY,abs(accY), signZ,abs(accZ) );
-	uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
+	//Transmite por ringbuffer
+	//uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
+	//Transmite por DMA
+	uart0_DMA_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
 }
 
 void procTrama(char *buf, int length)

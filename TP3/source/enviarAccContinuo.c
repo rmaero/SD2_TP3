@@ -28,7 +28,10 @@ void enviarContinuo()
 				signZ='-';
 			//responder
 			sprintf(&tramaRespuestaAcc,"%c%03d %c%03d %c%03d\n", signX,abs(accX), signY,abs(accY), signZ,abs(accZ) );
-			uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
+			//Tx por ringbuffer
+			//uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
+			//Tx por DMA
+			uart0_DMA_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
 	}
 }
 void enviarAccContinuo_1ms()

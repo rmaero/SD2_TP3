@@ -18,7 +18,7 @@ C_SRCS += \
 ../source/procTrama.c \
 ../source/ringBuffer.c \
 ../source/semihost_hardfault.c \
-../source/uart_ringBufer.c 
+../source/uart_ringBuffer.c 
 
 C_DEPS += \
 ./source/SD2_I2C.d \
@@ -35,7 +35,7 @@ C_DEPS += \
 ./source/procTrama.d \
 ./source/ringBuffer.d \
 ./source/semihost_hardfault.d \
-./source/uart_ringBufer.d 
+./source/uart_ringBuffer.d 
 
 OBJS += \
 ./source/SD2_I2C.o \
@@ -52,7 +52,7 @@ OBJS += \
 ./source/procTrama.o \
 ./source/ringBuffer.o \
 ./source/semihost_hardfault.o \
-./source/uart_ringBufer.o 
+./source/uart_ringBuffer.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -67,7 +67,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/SD2_I2C.d ./source/SD2_I2C.o ./source/SD2_board.d ./source/SD2_board.o ./source/display.d ./source/display.o ./source/enviarAccContinuo.d ./source/enviarAccContinuo.o ./source/font5x7.d ./source/font5x7.o ./source/main.d ./source/main.o ./source/mefDisplay.d ./source/mefDisplay.o ./source/mefRecTrama.d ./source/mefRecTrama.o ./source/mma8451.d ./source/mma8451.o ./source/mtb.d ./source/mtb.o ./source/oled.d ./source/oled.o ./source/procTrama.d ./source/procTrama.o ./source/ringBuffer.d ./source/ringBuffer.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/uart_ringBufer.d ./source/uart_ringBufer.o
+	-$(RM) ./source/SD2_I2C.d ./source/SD2_I2C.o ./source/SD2_board.d ./source/SD2_board.o ./source/display.d ./source/display.o ./source/enviarAccContinuo.d ./source/enviarAccContinuo.o ./source/font5x7.d ./source/font5x7.o ./source/main.d ./source/main.o ./source/mefDisplay.d ./source/mefDisplay.o ./source/mefRecTrama.d ./source/mefRecTrama.o ./source/mma8451.d ./source/mma8451.o ./source/mtb.d ./source/mtb.o ./source/oled.d ./source/oled.o ./source/procTrama.d ./source/procTrama.o ./source/ringBuffer.d ./source/ringBuffer.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/uart_ringBuffer.d ./source/uart_ringBuffer.o
 
 .PHONY: clean-source
 

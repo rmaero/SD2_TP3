@@ -69,6 +69,14 @@ int32_t uart_ringBuffer_recDatos(uint8_t *pBuf, int32_t size);
  **/
 int32_t uart_ringBuffer_envDatos(uint8_t *pBuf, int32_t size);
 
+/** \brief envía datos por puerto serie vía DMA
+ **
+ ** \param[inout] pBuf buffer a donde estan los datos a enviar
+ ** \param[in] size tamaño del buffer
+ ** \return cantidad de bytes enviados
+ **/
+int32_t uart0_DMA_envDatos(uint8_t *pBuf, int32_t size);
+
 /*==================[cplusplus]==============================================*/
 #ifdef __cplusplus
 }

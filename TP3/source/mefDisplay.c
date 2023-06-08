@@ -7,7 +7,7 @@
 #include "mma8451.h"
 #include "display.h"
 
-#define TIMER_1S 1000
+#define TIMER_DISPLAY_UPDATE_MS 400
 
 static uint16_t displayTimer;
 
@@ -15,7 +15,7 @@ void mefDisplay()
 {
 	if(displayTimer==0)
 	{
-		displayTimer = TIMER_1S;
+		displayTimer = TIMER_DISPLAY_UPDATE_MS;
 		int16_t accX = mma8451_getAcX();
 		int16_t accY = mma8451_getAcY();
 		int16_t accZ = mma8451_getAcZ();
