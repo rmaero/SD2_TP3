@@ -36,7 +36,6 @@ static uint32_t uart1Delay;
 static void* uart1_pRingBufferRx;
 
 static uint8_t txBuffer_dma[UART1_TX_BUFFER_DMA_SIZE];
-//static lpsci_dma_handle_t lpsciDmaHandle; //?
 static uart_dma_handle_t uart1DmaHandle;
 static dma_handle_t uart1TxDmaHandle;
 
@@ -223,8 +222,11 @@ void uart1_periodicTask1ms()
 	{
 		uart1Delay--;
 	}else{//medio sucio esto, delay para que no baje DE y RE instantaneamente
-		rs485_RE(false);
-		rs485_DE(false);
+		if(!uart1TxOnGoing)
+		{
+			rs485_RE(false);
+			rs485_DE(false);
+		}
 	}
 
 }
