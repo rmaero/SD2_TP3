@@ -1,6 +1,6 @@
+#include "uart1.h"
 #include "mefRecTrama.h"
 #include "procTrama.h"
-#include "uart_ringBuffer.h"
 
 
 typedef enum
@@ -24,7 +24,7 @@ void mefRecTrama_task(void)
 	uint8_t byteRec;
 	static uint8_t indexRec;
 
-	flagRec = uart_ringBuffer_recDatos(&byteRec, sizeof(byteRec));
+	flagRec = uart1_ringBuffer_recDatos(&byteRec, sizeof(byteRec));
 
 	switch (estado)
 	{

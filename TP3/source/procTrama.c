@@ -2,8 +2,8 @@
 #include "stdio.h"
 
 #include "procTrama.h"
-#include "uart_ringBuffer.h"
 #include "SD2_board.h"
+#include "uart1.h"
 #include "mma8451.h"
 
 #define NUMERO_GRUPO 16
@@ -53,7 +53,7 @@ static void procLed(char *buf)
 	//Responder igual a la peticion
 	//Tx por ringbuffer
 	//uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
-	uart0_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	uart1_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
 static void procSw(char *buf)
@@ -85,7 +85,7 @@ static void procSw(char *buf)
 	//Tx por ringbuffer
 	//uart_ringBuffer_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 	//Tx por DMA
-	uart0_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
+	uart1_DMA_envDatos(&tramaRespuesta,sizeof(tramaRespuesta));
 }
 
 static void procAcc()
@@ -106,7 +106,7 @@ static void procAcc()
 	//Transmite por ringbuffer
 	//uart_ringBuffer_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
 	//Transmite por DMA
-	uart0_DMA_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
+	uart1_DMA_envDatos(&tramaRespuestaAcc,sizeof(tramaRespuestaAcc));
 }
 
 void procTrama(char *buf, int length)

@@ -1,0 +1,12 @@
+../CMSIS/core_cm0plus.h:733:22:__NVIC_EnableIRQ	16	static
+../CMSIS/core_cm0plus.h:769:22:__NVIC_DisableIRQ	16	static
+../drivers/fsl_uart.h:578:23:UART_ReadByte	16	static
+../drivers/fsl_port.h:371:20:PORT_SetPinMux	24	static
+../drivers/fsl_dmamux.h:102:20:DMAMUX_EnableChannel	16	static
+../drivers/fsl_dmamux.h:132:20:DMAMUX_SetSource	24	static
+../source/uart1.c:47:13:UART1_UserCallback	24	static
+../source/uart1.c:59:6:uart1_init	32	static
+../source/uart1.c:117:9:uart1_ringBuffer_recDatos	32	static
+../source/uart1.c:147:9:uart1_DMA_envDatos	32	static
+../source/uart1.c:180:6:UART1_IRQHandler	8	static
+../source/uart1.c:220:6:uart1_periodicTask1ms	8	static

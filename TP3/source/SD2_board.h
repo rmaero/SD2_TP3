@@ -119,6 +119,8 @@ void board_SPISend(uint8_t* buf, size_t len);
  **/
 void board_setOledPin(board_oledPin_enum oledPin, uint8_t state);
 
+void rs485_RE(bool est);
+void rs485_DE(bool est);
 
 /*==================[cplusplus]==============================================*/
 #ifdef __cplusplus

@@ -31,6 +31,29 @@ static const board_gpioInfo_type board_gpioOled[] =
     {PORTE, GPIOE, 31},      /* DATA/CMD */
 };
 
+//RS485 control pins
+static const board_gpioInfo_type board_gpioContLine[] =
+{
+    {PORTA, GPIOA, 16},    /* RE */
+    {PORTA, GPIOA, 17},    /* DE */
+};
+
+void rs485_RE(bool est)
+{
+    if (est)
+    	GPIO_PortSet(board_gpioContLine[0].gpio, 1<<board_gpioContLine[0].pin);
+    else
+    	GPIO_PortClear(board_gpioContLine[0].gpio, 1<<board_gpioContLine[0].pin);
+}
+
+void rs485_DE(bool est)
+{
+    if (est)
+    	GPIO_PortSet(board_gpioContLine[1].gpio, 1<<board_gpioContLine[1].pin);
+    else
+    	GPIO_PortClear(board_gpioContLine[1].gpio, 1<<board_gpioContLine[1].pin);
+}
+
 void board_init(void)
 {
 	int32_t i;
@@ -49,6 +72,12 @@ void board_init(void)
 		.outputLogic = 0,
 		.pinDirection = kGPIO_DigitalOutput,
 	};
+
+	gpio_pin_config_t gpio_485_config =
+		{
+			.outputLogic = 1,
+			.pinDirection = kGPIO_DigitalOutput,
+		};
 
 	const port_pin_config_t port_led_config = {
 			/* Internal pull-up/down resistor is disabled */
@@ -89,6 +118,18 @@ void board_init(void)
 			.mux = kPORT_MuxAsGpio,
 		};
 
+	const port_pin_config_t port_485_config = {
+				/* Internal pull-up/down resistor is disabled */
+			.pullSelect = kPORT_PullDisable,
+			/* Slow slew rate is configured */
+			.slewRate = kPORT_SlowSlewRate,
+			/* Passive filter is disabled */
+			.passiveFilterEnable = kPORT_PassiveFilterDisable,
+			/* Low drive strength is configured */
+			.driveStrength = kPORT_LowDriveStrength,
+			/* Pin is configured as PTC3 */
+			.mux = kPORT_MuxAsGpio,
+		};
 
 	CLOCK_EnableClock(kCLOCK_PortA);
 	CLOCK_EnableClock(kCLOCK_PortC);
@@ -115,6 +156,16 @@ void board_init(void)
 		PORT_SetPinConfig(board_gpioOled[i].port, board_gpioOled[i].pin, &port_oled_config);
 		GPIO_PinInit(board_gpioOled[i].gpio, board_gpioOled[i].pin, &gpio_oled_config);
 	}
+
+	/*Inicializacion pines control UART1 - RS485*/
+	for (i = 0 ; i < 2 ; i++)
+	{
+		PORT_SetPinConfig(board_gpioContLine[i].port, board_gpioContLine[i].pin, &port_485_config);
+		GPIO_PinInit(board_gpioContLine[i].gpio, board_gpioContLine[i].pin, &gpio_485_config);
+	}
+
+	rs485_RE(false);
+	rs485_DE(false);
 
 	/* =========== SPI =================== */
 	board_configSPI0();

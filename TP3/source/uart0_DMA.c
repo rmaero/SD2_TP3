@@ -23,7 +23,7 @@
 
 
 static void* pRingBufferRx;
-static void* pRingBufferTx;
+//static void* pRingBufferTx;
 
 static uint8_t txBuffer_dma[TX_BUFFER_DMA_SIZE];
 static lpsci_dma_handle_t lpsciDmaHandle;
@@ -39,7 +39,7 @@ static void LPSCI_UserCallback(UART0_Type *base, lpsci_dma_handle_t *handle, sta
     }
 }
 
-void uart_ringBuffer_init(void)
+void uart0_init(void)
 {
 	lpsci_config_t config;
 
@@ -109,7 +109,7 @@ void uart_ringBuffer_init(void)
  ** \param[in] size tamaño del buffer
  ** \return cantidad de bytes recibidos
  **/
-int32_t uart_ringBuffer_recDatos(uint8_t *pBuf, int32_t size)
+int32_t uart0_ringBuffer_recDatos(uint8_t *pBuf, int32_t size)
 {
     int32_t ret = 0;
 
@@ -139,14 +139,15 @@ int32_t uart_ringBuffer_recDatos(uint8_t *pBuf, int32_t size)
  ** \param[in] size tamaño del buffer
  ** \return cantidad de bytes enviados
  **/
-int32_t uart_ringBuffer_envDatos(uint8_t *pBuf, int32_t size)
+/*
+int32_t uart0_ringBuffer_envDatos(uint8_t *pBuf, int32_t size)
 {
     int32_t ret = 0;
 
-    /* entra sección de código crítico */
+    // entra sección de código crítico
     NVIC_DisableIRQ(UART0_IRQn);
 
-    /* si el buffer estaba vacío hay que habilitar la int TX */
+    // si el buffer estaba vacío hay que habilitar la int TX
     if (ringBuffer_isEmpty(pRingBufferTx))
     	LPSCI_EnableInterrupts(UART0, kLPSCI_TxDataRegEmptyInterruptEnable);
 
@@ -156,11 +157,12 @@ int32_t uart_ringBuffer_envDatos(uint8_t *pBuf, int32_t size)
         ret++;
     }
 
-    /* sale de sección de código crítico */
+    // sale de sección de código crítico
     NVIC_EnableIRQ(UART0_IRQn);
 
     return ret;
 }
+*/
 
 /** \brief envía datos por puerto serie accediendo a memoria RAM
  **

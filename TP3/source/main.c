@@ -1,13 +1,14 @@
-#include <mefRecTrama.h>
-#include "SD2_board.h"
 #include "board.h"
+#include "SD2_board.h"
+#include <uart0_DMA.h>
 #include "mma8451.h"
-#include "uart_ringBuffer.h"
-#include "procTrama.h"
-#include "enviarAccContinuo.h"
 #include "oled.h"
+#include "uart1.h"
+#include <mefRecTrama.h>
+#include "procTrama.h"
 #include "display.h"
 #include "mefDisplay.h"
+#include "enviarAccContinuo.h"
 
 int main(void)
 {
@@ -23,7 +24,8 @@ int main(void)
 	mma8451_setDR_int();
 
 	//UART0
-	uart_ringBuffer_init();
+	uart0_init();
+	uart1_init();
 
 	//SPI Display
 	display_init();
@@ -31,9 +33,9 @@ int main(void)
 
     while(1)
     {
-       mefRecTrama_task();
-       mefDisplay();
-      // enviarContinuo();
+    	mefRecTrama_task();//UART1
+    	mefDisplay();
+    	enviarContinuo();//UART0
     }
 }
 
@@ -41,4 +43,5 @@ void SysTick_Handler(void)
 {
 	enviarAccContinuo_1ms();
 	mefDisplay_task1ms();
+	uart1_periodicTask1ms();
 }
