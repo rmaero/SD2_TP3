@@ -37,6 +37,4 @@ int32_t uart1_ringBuffer_recDatos(uint8_t *pBuf, int32_t size);
  **/
 int32_t uart1_DMA_envDatos(uint8_t *pBuf, int32_t size);
 
-void uart1_periodicTask1ms();
-
 #endif /* UART1_H_ */

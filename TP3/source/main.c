@@ -43,5 +43,4 @@ void SysTick_Handler(void)
 {
 	enviarAccContinuo_1ms();
 	mefDisplay_task1ms();
-	uart1_periodicTask1ms();
 }

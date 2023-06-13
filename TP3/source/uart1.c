@@ -30,8 +30,6 @@
 #define RS485_UART_IRQn             UART1_IRQn
 #define RS485_kSimClockGateUart     kSimClockGateUart1
 
-#define UART1DELAY_MS 2
-static uint32_t uart1Delay;
 
 static void* uart1_pRingBufferRx;
 
@@ -47,11 +45,7 @@ static void UART1_UserCallback(UART_Type *base, uart_dma_handle_t *handle, statu
 {
 
 	if (kStatus_UART_TxIdle == status)
-	{
 		uart1TxOnGoing = false;
-	}
-
-	uart1Delay=UART1DELAY_MS;//espera X milis despues de terminar la transaccion para bajar DE y RE
 
 }
 
@@ -119,6 +113,7 @@ int32_t uart1_ringBuffer_recDatos(uint8_t *pBuf, int32_t size)
 
     /* entra sección de código crítico */
     NVIC_DisableIRQ(UART1_IRQn);
+    NVIC_DisableIRQ(PORTC_PORTD_IRQn);//deshabilito para que no interrumpa el acelerometro
 
     while (!ringBuffer_isEmpty(uart1_pRingBufferRx) && ret < size)
     {
@@ -133,7 +128,7 @@ int32_t uart1_ringBuffer_recDatos(uint8_t *pBuf, int32_t size)
 
     /* sale de sección de código crítico */
     NVIC_EnableIRQ(UART1_IRQn);
-
+    NVIC_EnableIRQ(PORTC_PORTD_IRQn);
     return ret;
 }
 
@@ -175,13 +170,14 @@ int32_t uart1_DMA_envDatos(uint8_t *pBuf, int32_t size)
 
     return size;
 }
-//TODO
+
 void UART1_IRQHandler(void)
 {
-	//es necesario?
-	if ( kUART_RxOverrunFlag & UART_GetStatusFlags(RS485_UART))// &&
+
+	if ( kUART_RxOverrunFlag & UART_GetStatusFlags(RS485_UART) )//&&
 			//(kUART_RxOverrunInterruptEnable) & UART_GetEnabledInterrupts(RS485_UART) )
 	{
+		board_setLed(BOARD_LED_ID_ROJO, BOARD_LED_MSG_ON);
 		UART_ClearStatusFlags(UART1, kUART_RxOverrunFlag);
 	}
 
@@ -208,25 +204,13 @@ void UART1_IRQHandler(void)
 	if ( (kUART_TransmissionCompleteFlag)            & UART_GetStatusFlags(RS485_UART) &&
 		 (kUART_TransmissionCompleteInterruptEnable) & UART_GetEnabledInterrupts(RS485_UART) )
     {
-        /* entra acá cuando se completó la transmisión del byte
-         *
-         */
+        //* entra acá cuando se completó la transmisión (COMPLETA, TODOS LOS BYTES)
+
+		rs485_RE(false);
+		rs485_DE(false);
 		UART_DisableInterrupts(RS485_UART, kUART_TransmissionCompleteInterruptEnable);
 		UART_ClearStatusFlags(RS485_UART, kUART_TransmissionCompleteFlag);
     }
 }
 
-void uart1_periodicTask1ms()
-{
-	if(uart1Delay)
-	{
-		uart1Delay--;
-	}else{//medio sucio esto, delay para que no baje DE y RE instantaneamente
-		if(!uart1TxOnGoing)
-		{
-			rs485_RE(false);
-			rs485_DE(false);
-		}
-	}
 
-}
